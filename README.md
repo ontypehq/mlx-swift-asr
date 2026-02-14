@@ -66,6 +66,25 @@ Download a compatible Qwen3-ASR model (GGUF/safetensors quantized for MLX):
 | Qwen3-ASR-0.6B-6bit | ~400MB | Recommended for most use cases |
 | Qwen3-ASR-1.7B | ~1.7GB | Higher accuracy |
 
+## Benchmark
+
+Qwen3-ASR-0.6B-6bit on Apple M4 Pro, macOS 15.3. Numbers are **inference only** (excluding model load and Metal warmup).
+
+| Audio Duration | Inference Time | RTF | Speed |
+|---------------|---------------|-----|-------|
+| 1.58s | 0.27s | 0.172 | **5.8x** real-time |
+| 2.56s | 0.41s | 0.159 | **6.3x** real-time |
+| 0.98s | 0.26s | 0.264 | **3.8x** real-time |
+| 1.19s | 0.29s | 0.239 | **4.2x** real-time |
+
+Typical RTF range: **0.15–0.27** (3.7–6.3x real-time), competitive with the Python MLX implementation while running as a native Swift library with no Python overhead.
+
+### Run benchmarks yourself
+
+```bash
+swift test --filter Benchmark
+```
+
 ## Architecture
 
 ```
