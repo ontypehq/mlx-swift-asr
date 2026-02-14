@@ -68,7 +68,7 @@ Download a compatible Qwen3-ASR model (GGUF/safetensors quantized for MLX):
 
 ## Benchmark
 
-Qwen3-ASR-0.6B-6bit on Apple M4 Pro, macOS 15.3. Numbers are **inference only** (excluding model load and Metal warmup).
+Qwen3-ASR-0.6B-6bit on Apple M1 Pro, macOS 15.3. Numbers are **inference only** (excluding model load and Metal warmup).
 
 | Audio Duration | Inference Time | RTF | Speed |
 |---------------|---------------|-----|-------|
